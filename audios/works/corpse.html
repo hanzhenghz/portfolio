@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="/js/lightbox.js"></script>
+</head>
+<body>
+    <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
+
+    <div id="header">
+        <ul id="nav">
+            <li><a href="../home.html">HOME</a></li>
+            <li><a href="../works.html">WORKS</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+        </ul>
+    </div>
+    <div id="body">
+                
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse.jpg">
+                    <img src="../images/raw/corpse/corpse.jpg" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse3.jpg">
+                    <img src="../images/raw/corpse/corpse3.jpg" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <br>
+
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse2.jpg">
+                    <img src="../images/raw/corpse/corpse2.jpg" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <br>
+
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse6.jpg">
+                    <img src="../images/raw/corpse/corpse6.jpg" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="textparagraph" style="font-size: 40px;">
+            <p>This Corpse, 2023.11
+            </p>
+        </div>
+
+        <div class="textparagraph" style="font-size: 30px;">
+            <p>Medium:
+            <br>
+            2*4 fir plank, walnut, Corpse Eau de Parfum
+            </p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="works">
+            <div id="workshorizontalsub">
+                <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse4.jpg">
+                        <img src="../images/raw/corpse/corpse4.jpg">
+                </a>
+                <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse5.jpg">
+                        <img src="../images/raw/corpse/corpse5.jpg">
+                </a>
+            </div>
+        </div>
+
+        <div id="lightbox">
+            <a href="#close">&times;</a>
+              <img id="lightbox-img" src="" style="max-width: 80%;">
+        </div>
+    </div> 
+</body>
+<footer>
+    <div id="footer">
+        <ul id="nav">
+        <div class="footer-content">
+            <p> - 2024 Han Zheng</p>
+        </div>
+        </ul>
+    </div>
+</footer>
+</html>
+
+<script>
+  function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("topbtn").style.display = "block";
+  } else {
+    document.getElementById("topbtn").style.display = "none";
+  }
+}
+  </script>

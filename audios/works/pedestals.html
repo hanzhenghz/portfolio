@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="/js/lightbox.js"></script>
+</head>
+<body>
+    <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
+
+    <div id="header">
+        <ul id="nav">
+            <li><a href="../home.html">HOME</a></li>
+            <li><a href="../works.html">WORKS</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+        </ul>
+    </div>
+
+    <div id="body">      
+        
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/pedestals/pedestals-instruction.png">
+                    <img src="../images/raw/pedestals/pedestals-instruction.png" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="works">
+            <div id="workshorizontalsub">
+                <a href="#lightbox" data-lightbox-src="../images/raw/pedestals/pedestals.png">
+                        <img src="../images/raw/pedestals/pedestals.png">
+                </a>
+                
+                <a href="#lightbox" data-lightbox-src="../images/raw/pedestals/pedestals02.png">
+                    <img src="../images/raw/pedestals/pedestals02.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="textparagraph" style="font-size: 20px;">
+            <p>2023.5 &nbsp at Rhode Island School of Design
+            </p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="works">
+            <div id="workshorizontalsub">
+                <a href="#lightbox" data-lightbox-src="../images/raw/pedestals/pedestalsWA01.png">
+                        <img src="../images/raw/pedestals/pedestalsWA01.png">
+                </a>
+                
+                <a href="#lightbox" data-lightbox-src="../images/raw/pedestals/pedestalsWA02.png">
+                    <img src="../images/raw/pedestals/pedestalsWA02.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="textparagraph" style="font-size: 20px;">
+            <p>2023.10 &nbsp at Woodstock Academy Alumni Show 23
+            </p>
+        </div>
+
+        <br>
+        <br>
+        
+        <div id="lightbox">
+            <a href="#close">&times;</a>
+              <img id="lightbox-img" src="" style="max-width: 80%;">
+        </div>
+    </div> 
+</body>
+<footer>
+    <div id="footer">
+        <ul id="nav">
+        <div class="footer-content">
+            <p> - 2024 Han Zheng</p>
+        </div>
+        </ul>
+    </div>
+</footer>
+</html>
+
+<script>
+  function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("topbtn").style.display = "block";
+  } else {
+    document.getElementById("topbtn").style.display = "none";
+  }
+}
+  </script>
