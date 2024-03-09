@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
+    
+    <div id="header">
+        <ul id="nav">
+            <li><a href="home.html">HOME</a></li>
+            <div id="navselected">WORKS</div>
+            <li><a href="about.html">ABOUT</a></li>
+        </ul>
+    </div>
+    <!-- Image contents -->
+    <div id="body">
+        <div id="catalog">
+            <a href="works/glassvoice.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/glassvoice_compressed.png" style="max-width: 100%;">
+                    <div class="image-title"> Glass Voice</div>
+                </div>
+            </a>
+            
+            <a href="works/corpse.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/corpse_compressed.JPG" style="max-width: 100%;">
+                    <div class="image-title"> This Corpse</div>
+                </div>
+            </a>
+            
+            <a href="works/privilegeshoes.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/privilegeshoes_compressed.JPG" style="max-width: 100%;">
+                    <div class="image-title"> A privilege gifted to who was and who is quiet</div>
+                </div>
+            </a>
+            
+            <a href="works/3.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/3_compressed.jpg" style="max-width: 100%;">
+                    <div class="image-title"> [3] with Brenna, Han and Reed </div>
+                </div>
+            </a>
+            
+            <a href="works/pulsing.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/pulsing_compressed.png" style="max-width: 100%;">
+                    <div class="image-title"> Extended structure from pulses</div>
+                </div>
+            </a>
+            
+            <a href="works/pedestals.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/pedestals_compressed.png" style="max-width: 100%;">
+                    <div class="image-title"> Pedestals</div>
+                </div>
+            </a>
+            
+            <a href="works/moment.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/moment_compressed.png" style="max-width: 100%;">
+                    <div class="image-title"> Moment </div>
+                </div>
+            </a>
+            
+            <a href="works/euphoric.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/euphoric_compressed.png" style="max-width: 100%;">
+                    <div class="image-title"> EUPHORIC </div>
+                </div>
+            </a>
+        </div>  
+    </div>  
+</body>
+<footer>
+    <div id="footer">
+        <ul id="nav">
+        <div class="footer-content">
+            <p> - 2024 Han Zheng</p>
+        </div>
+        </ul>
+    </div>
+</footer>
+</html>
+
+<script>
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("topbtn").style.display = "block";
+  } else {
+    document.getElementById("topbtn").style.display = "none";
+  }
+}
+</script>
