@@ -1,0 +1,16 @@
+.video-container {
+    top: 0;
+    bottom: 0;
+    width: auto;
+    max-width: 90vw;
+    min-height: 80vh; 
+    overflow: hidden;
+  }
+  .video-container video {
+    /* Make video to at least 100% wide and tall */ 
+    object-fit: contain;
+    width: auto;
+    height: 80vh;
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+
+  }
