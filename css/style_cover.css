@@ -1,0 +1,25 @@
+#absolutebg-cover {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+#absolutebg-cover img{
+    /* auto fit screen? */
+    object-fit: fill;
+}
+
+body{
+    background-image: url('../images/raw/glassvoice/glassvoice.png');
+    background-position: center center;
+    background-size: cover;
+    height: 100vh!important; 
+    width: 100vw!important;
+    background-repeat: no-repeat;
+}

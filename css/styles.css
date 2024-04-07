@@ -10,9 +10,11 @@ body {
     display: flex;
     color: #666666;
     justify-content: center;
-    margin-top: 20vh;
-    margin-right: 20%;
+    margin-top: 35vh;
     list-style: none;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: white;
 }
 
 .title {
