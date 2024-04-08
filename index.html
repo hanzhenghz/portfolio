@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/style_cover.css">
+    <script src="https://unpkg.com/i18next@latest/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-xhr-backend@latest/dist/umd/i18nextXHRBackend.min.js"></script>
+    <script src="js/i18n-setup.js"></script>
 </head>
 <body>
     <div id="maintitle">
@@ -13,4 +16,19 @@
         <div style="width: 60vw; height: 2px; background-color: currentColor;"></div>
         </a></li>
     </div>
+
+    
+<script>
+    #<span id="selectEnglish">Eng</span> / <span id="selectChinese">中文</span>
+document.getElementById('selectEnglish').addEventListener('click', function() {
+    console.log('English selected');
+    i18next.changeLanguage('en');
+});
+
+document.getElementById('selectChinese').addEventListener('click', function() {
+    console.log('Chinese selected');
+    i18next.changeLanguage('zh');
+});
+</script>
+
 </html>
