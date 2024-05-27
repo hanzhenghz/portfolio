@@ -3,3 +3,7 @@ front cover
   english | 中文
    i18next
    revised index & works
+
+adding works
+  otaku manual
+  conversation spiral

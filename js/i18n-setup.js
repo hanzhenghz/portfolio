@@ -3,7 +3,7 @@ i18next
   .init({
     lng: 'zh',
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
+      loadPath: 'locales/{{lng}}/{{ns}}.json'
     }
   }, function(err, t) {
     if (err) {
