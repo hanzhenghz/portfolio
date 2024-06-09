@@ -14,7 +14,9 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
       var page = path.split("/").pop().split(".")[0];;
       var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
       
-      console.log('Selected language:', selectedLanguage);
+
+      console.log('Selected LANGUAGE:', selectedLanguage);
+      console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
       
       // Initialize i18next
         i18next
@@ -43,37 +45,56 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
           console.log(i18next.language);
       }
 
-      // Add event listeners after the DOM has loaded
-      // Get the language select buttons
-    var selectEnglish = document.getElementById('selectEnglish');
-    var selectChinese = document.getElementById('selectChinese');
-
-    // Add event listeners to the buttons
-    selectEnglish.addEventListener('click', function() {
-        selectLanguage('en');
-    });
-    selectChinese.addEventListener('click', function() {
-        selectLanguage('zh');
-    });
-
-    // Function to select a language
-    function selectLanguage(language) {
-        // Update the language with i18next
-        i18next.changeLanguage(language, function(err, t) {
-            if (err) return console.log('something went wrong loading', err);
-            updateContent();
-        });
-
-        // Update the appearance of the buttons
-        if (language === 'en') {
+      document.addEventListener('DOMContentLoaded', (event) => {
+        // Get the language select buttons
+        var selectEnglish = document.getElementById('selectEnglish');
+        var selectChinese = document.getElementById('selectChinese');
+    
+        // Get the previously selected language from localStorage
+        var selectedLanguage = localStorage.getItem('selectedLanguage');
+    
+        // Update the appearance of the buttons based on the selected language
+        if (selectedLanguage === 'en') {
             selectEnglish.classList.add('selected');
             selectChinese.classList.remove('selected');
-        } else {
+        } else if (selectedLanguage === 'zh') {
             selectChinese.classList.add('selected');
             selectEnglish.classList.remove('selected');
         }
-    }
+    
+        // Add event listeners to the buttons
+        if (selectEnglish) {
+            selectEnglish.addEventListener('click', function() {
+                selectLanguage('en');
+            });
+        }
+    
+        if (selectChinese) {
+            selectChinese.addEventListener('click', function() {
+                selectLanguage('zh');
+            });
+        }
+    
+        // Function to select a language
+        function selectLanguage(language) {
+            // Update the language with i18next
+            i18next.changeLanguage(language, function(err, t) {
+                if (err) return console.log('something went wrong loading', err);
+                updateContent();
+            });
+    
+            // Update the appearance of the buttons
+            if (language === 'en') {
+                selectEnglish.classList.add('selected');
+                selectChinese.classList.remove('selected');
+            } else {
+                selectChinese.classList.add('selected');
+                selectEnglish.classList.remove('selected');
+            }
+    
+            localStorage.setItem('selectedLanguage', language);
+        }
+    });
 
-    localStorage.setItem('selectedLanguage', language);
   });
 });
