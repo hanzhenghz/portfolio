@@ -312,3 +312,13 @@ a:hover {
     transform:scale(1,2); 
     color: #333333; /* Add a dark-grey background on hover */
 }
+
+.language-select:active {
+    transform: scale(1.3,1.5);
+}
+
+.selected {
+    transform:scale(1,2); 
+    color: #333333;
+    pointer-events: none;
+}
