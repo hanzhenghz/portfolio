@@ -295,3 +295,20 @@ a:hover {
     width: 30vw;
     max-width: 400px;
 }
+
+#eng-zh {
+    font-size: 2.5vw;
+    margin-top: 15px;
+    cursor: default;
+}
+.language-select {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transform: scale(1,0.9);
+}
+
+.language-select:hover {
+    transform:scale(1,2); 
+    color: #333333; /* Add a dark-grey background on hover */
+}
