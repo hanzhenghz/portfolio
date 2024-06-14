@@ -23,7 +23,7 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
             .use(i18nextXHRBackend)
             .init({
                 backend: {
-                    loadPath: 'locales/{{lng}}/index.json'
+                    loadPath: 'locales/{{lng}}/' + page + '.json'
                 },
                 lng: localStorage.getItem('selectedLanguage'),
                 fallbackLng: 'en',
