@@ -54,37 +54,7 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
           console.log(i18next.language);
       }
 
-      document.addEventListener('DOMContentLoaded', (event) => {
-        // Get the language select buttons
-        var selectEnglish = document.getElementById('selectEnglish');
-        var selectChinese = document.getElementById('selectChinese');
-    
-        // Get the previously selected language from localStorage
-        var selectedLanguage = localStorage.getItem('selectedLanguage');
-    
-        // Update the appearance of the buttons based on the selected language
-        if (selectedLanguage === 'en') {
-            selectEnglish.classList.add('selected');
-            selectChinese.classList.remove('selected');
-        } else if (selectedLanguage === 'zh') {
-            selectChinese.classList.add('selected');
-            selectEnglish.classList.remove('selected');
-        }
-    
-        // Add event listeners to the buttons
-        if (selectEnglish) {
-            selectEnglish.addEventListener('click', function() {
-                console.log('English button clicked');
-                selectLanguage('en');
-            });
-        }
-    
-        if (selectChinese) {
-            selectChinese.addEventListener('click', function() {
-                console.log('Chinese button clicked');
-                selectLanguage('zh');
-            });
-        }
+      
     
         // Function to select a language
         function selectLanguage(language) {
