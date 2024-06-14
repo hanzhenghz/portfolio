@@ -1,3 +1,5 @@
+lightroom page repetition
+
 front cover
   bg video/demo
   english | 中文
@@ -5,5 +7,4 @@ front cover
    revised index & works
 
 adding works
-  otaku manual
   conversation spiral
