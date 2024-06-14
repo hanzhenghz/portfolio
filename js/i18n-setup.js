@@ -72,7 +72,7 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
     
         if (selectChinese) {
             selectChinese.addEventListener('click', function() {
-                console.log('English button clicked');
+                console.log('Chinese button clicked');
                 selectLanguage('zh');
             });
         }
