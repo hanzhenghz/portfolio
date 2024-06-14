@@ -9,10 +9,10 @@ function loadScript(src, callback) {
 // Load i18next and i18nextXHRBackend
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.3/i18next.min.js', function() {
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18nextXHRBackend.min.js', function() {
-      // Get the current page name
-      var path = window.location.pathname;
-      var page = path.split("/").pop().split(".")[0];
-      
+    // Get the current page name
+    var path = window.location.pathname;
+    var page = path.split("/").pop().split(".")[0];
+    
             // If the page name is empty, default to 'index'
         if (page === '') {
             page = 'index';
@@ -21,13 +21,13 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
             page = path.split("/").pop().split(".")[0];;
         }
     
-      var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-      
+    var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    
 
-      console.log('Selected LANGUAGE:', selectedLanguage);
-      console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-      
-      // Initialize i18next
+    console.log('Selected LANGUAGE:', selectedLanguage);
+    console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
+    
+    // Initialize i18next
         i18next
             .use(i18nextXHRBackend)
             .init({
@@ -42,19 +42,19 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
                 updateContent();
             });
 
-      // Update content based on current language
-      function updateContent() {
-          var elements = document.querySelectorAll('[data-i18n]');
+    // Update content based on current language
+    function updateContent() {
+        var elements = document.querySelectorAll('[data-i18n]');
 
-          elements.forEach(function(element) {
-              var key = element.getAttribute('data-i18n');
-              element.innerHTML = i18next.t(key);
-          });
+        elements.forEach(function(element) {
+            var key = element.getAttribute('data-i18n');
+            element.innerHTML = i18next.t(key);
+        });
 
-          console.log(i18next.language);
-      }
+        console.log(i18next.language);
+    }
 
-      document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('DOMContentLoaded', (event) => {
         // Get the language select buttons
         var selectEnglish = document.getElementById('selectEnglish');
         var selectChinese = document.getElementById('selectChinese');
@@ -106,6 +106,5 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
             localStorage.setItem('selectedLanguage', language);
         }
     });
-
   });
-);
+});
