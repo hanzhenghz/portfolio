@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/i18n-setup.js"></script>
 </head>
 <body>
     <div id="header">
         <ul id="nav">
-            <li><a href="/portfolio">HOME</a></li>
-            <li><a href="works.html">WORKS</a></li>
-            <div id="navselected">ABOUT</div>
+            <li><a data-i18n="HOME" href="./">HOME</a></li>
+            <li><a data-i18n="WORKS" href="works.html">WORKS</a></li>
+            <div data-i18n="ABOUT" id="navselected">ABOUT</div>
         </ul>
     </div>  
     <div id="body">
@@ -22,10 +23,10 @@
             <br>
 
             <p>2002</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Born in Hangzhou, Zhejiang, China</p>
+            <p data-i18n="2002-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Born in Hangzhou, Zhejiang, China</p>
             
-            <p>Present</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Studying in Rhode Island School of Design under Sculpture department. Providence, RI, US.</p>
+            <p data-i18n="present">Present</p>
+            <p data-i18n="present-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Studying in Rhode Island School of Design under Sculpture department. Providence, RI, US.</p>
 
             <br>
 
