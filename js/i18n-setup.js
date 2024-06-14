@@ -11,7 +11,16 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.3/i18next.min.js
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18nextXHRBackend.min.js', function() {
       // Get the current page name
       var path = window.location.pathname;
-      var page = path.split("/").pop().split(".")[0];;
+      var page = path.split("/").pop().split(".")[0];
+      
+            // If the page name is empty, default to 'index'
+        if (page === '') {
+            page = 'index';
+        } else {
+            // If the page name is not empty, remove the extension
+            page = path.split("/").pop().split(".")[0];;
+        }
+    
       var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
       
 
