@@ -54,7 +54,7 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
         console.log(i18next.language);
     }
 
-    document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('click', function(event) {
         // Get the language select buttons
         var selectEnglish = document.getElementById('selectEnglish');
         var selectChinese = document.getElementById('selectChinese');
