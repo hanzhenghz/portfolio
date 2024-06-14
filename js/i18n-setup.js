@@ -65,12 +65,14 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
         // Add event listeners to the buttons
         if (selectEnglish) {
             selectEnglish.addEventListener('click', function() {
+                console.log('English button clicked');
                 selectLanguage('en');
             });
         }
     
         if (selectChinese) {
             selectChinese.addEventListener('click', function() {
+                console.log('English button clicked');
                 selectLanguage('zh');
             });
         }
