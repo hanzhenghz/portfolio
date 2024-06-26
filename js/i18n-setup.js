@@ -23,26 +23,7 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
     
     var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
     
-    function fetchCommonTranslations(lang, callback) {
-        const commonTranslationsPath = `locales/${lang}/common.json`;
-        fetch(commonTranslationsPath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                callback(data); // Pass the translations to the callback
-            })
-            .catch(error => {
-                console.error('Error fetching common translations:', error);
-                callback({}); // Pass an empty object in case of error
-            });
-    }
-    
-    // Step 2: Fetch common translations and then initialize i18next
-    fetchCommonTranslations(localStorage.getItem('selectedLanguage'), function(commonTranslations) {
+
     console.log('Selected LANGUAGE:', selectedLanguage);
     console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
     
@@ -50,11 +31,6 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
         i18next
             .use(i18nextXHRBackend)
             .init({
-                resources: {
-                    [localStorage.getItem('selectedLanguage')]: {
-                        translation: commonTranslations // Assuming common translations are structured correctly
-                    }
-                },
                 backend: {
                     loadPath: 'locales/{{lng}}/' + page + '.json'
                 },
@@ -65,7 +41,6 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
                 // resources have been loaded
                 updateContent();
             });
-        })
 
     // Update content based on current language
     function updateContent() {
