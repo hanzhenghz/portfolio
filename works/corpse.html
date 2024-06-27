@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style_corpse.css">
     <script src="../js/lightbox.js"></script>
 </head>
 <body>
@@ -16,8 +17,18 @@
             <li><a href="../about.html">ABOUT</a></li>
         </ul>
     </div>
+            
+    <div id="focus">
+        <img src="../images/raw/corpse/focus.png">
+        <div class="circle"></div>
+        <video  autoplay muted loop>
+            <source src="../images/raw/corpse/gross.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
     <div id="body">
-                
+        
         <div class="works">
             <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse.jpg">
                     <img src="../images/raw/corpse/corpse.jpg" style="max-width: 80%;">
@@ -76,7 +87,7 @@
         </div>
 
         <div id="lightbox">
-            <a href="#close">&times;</a>
+            <a>&times;</a>
               <img id="lightbox-img" src="" style="max-width: 80%;">
         </div>
     </div> 

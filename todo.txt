@@ -1,10 +1,11 @@
 lightroom page repetition
+  position not centered after revise
 
 front cover
   bg video/demo
-  english | 中文
-   i18next
-   revised index & works
 
 adding works
   conversation spiral
+
+corpse
+  optimizing

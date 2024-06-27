@@ -57,6 +57,7 @@ body {
     margin-top: 3vh; 
     display: flex;
     justify-content: left; /* Centering the menu */
+    
 }
 
 #lightbox {
@@ -71,17 +72,9 @@ body {
     overflow: hidden;
 }
 
-
-#lightbox:target {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #lightbox img {
     max-width: 80vw;
     max-height: 80vh;
-    position: absolute;
     object-fit: contain;
 }
 
@@ -92,6 +85,7 @@ body {
     color: #fff;
     font-size: 50px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 #lightbox a:hover {
