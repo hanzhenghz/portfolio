@@ -24,30 +24,10 @@
         <video id="gross" autoplay muted loop>
             <source src="../images/raw/corpse/gross.webm" type="video/webm">
         </video>
-        <div style="z-index: -12; position: absolute; width: 100vw; height: 100vh; background-color: black;"></div>
+        <div id="grossbg"></div>
     </div>
     
     <div id="body">
-        
-        <div class="works">
-            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse.jpg">
-                    <img src="../images/raw/corpse/corpse.jpg" style="max-width: 80%;">
-            </a>
-        </div>
-
-        <div class="works">
-            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse3.jpg">
-                    <img src="../images/raw/corpse/corpse3.jpg" style="max-width: 80%;">
-            </a>
-        </div>
-
-        <br>
-
-        <div class="works">
-            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse2.jpg">
-                    <img src="../images/raw/corpse/corpse2.jpg" style="max-width: 80%;">
-            </a>
-        </div>
 
         <br>
         <br>
@@ -57,13 +37,38 @@
             <p>This Corpse, 2023.11
             </p>
         </div>
-
         <div class="textparagraph" style="font-size: 30px;">
             <p>Medium:
             <br>
-            2*4 fir plank, walnut, Corpse Eau de Parfum
+            2*4 fir plank, walnut, Corpse
             </p>
         </div>
+        
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse.jpg">
+                <img src="../images/raw/corpse/corpse.jpg">
+            </a>
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse3.jpg">
+                <img src="../images/raw/corpse/corpse3.jpg">
+            </a>
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse2.jpg">
+                <img src="../images/raw/corpse/corpse2.jpg">
+            </a>
+        </div>
+
+        <br>
+        <div style="width: 100vw; height: 2px; background-color: #666666;"></div>
+
+        <div class="works">
+            
+        </div>
+
+        <br>
+
+        <div class="works">
+
+        </div>
+
 
         <br>
         <br>
@@ -96,17 +101,4 @@
 </footer>
 </html>
 
-<script>
-  function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("topbtn").style.display = "block";
-  } else {
-    document.getElementById("topbtn").style.display = "none";
-  }
-}
-  </script>
+<script src="../js/topbtn.js"></script>

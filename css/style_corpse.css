@@ -57,11 +57,30 @@ li{
 }
 
 #gross {
-    width: 700px;
-    height: auto;
+    width: auto;
+    height: 100vh;
     z-index: -11;
-    position: relative;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    margin-top: -20vh;
+}
+
+#grossbg {
+    z-index: -12; 
+    position: absolute; 
+    width: 100vw; 
+    height: 100vh; 
+    background-color: black;
+}
+
+.works {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+    gap: 20px;
+}
+.works img{
+    max-height: 80vh;
 }

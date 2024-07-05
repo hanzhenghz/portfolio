@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style_glassvoice.css">
+    <script src="../js/scrollplayback.js"></script>
     <script src="../js/lightbox.js"></script>
+    <script src="../js/scrollplayback.js"></script>
 </head>
+
 <body>
     <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
 
+<div id="scrollplaycover">
     <div id="header">
         <ul id="nav">
             <li><a href="..">HOME</a></li>
@@ -16,6 +21,20 @@
             <li><a href="../about.html">ABOUT</a></li>
         </ul>
     </div>
+
+<div id="videoOverlay"></div>
+<div id="animationContainer"></div>
+<div class="scrollWrapper">
+    <div id="scrollContainer">
+        <video id="scrollVideo" preload="metadata">
+            <source src="../images/raw/glassvoice/test07041007.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="height: 1500px;"></div>
+    </div>
+</div>
+</div>
+
     <div id="body">
         <div class="textparagraph" style="font-size: 40px;">
             <p>Glass Voice, 2023.02
@@ -92,16 +111,40 @@
 </html>
 
 <script>
-  function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-window.onscroll = function() {scrollFunction()};
+
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 20) {
     document.getElementById("topbtn").style.display = "block";
   } else {
     document.getElementById("topbtn").style.display = "none";
   }
 }
-  </script>
+
+scrollContainer.addEventListener('scroll', scrollFunction);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+        setInterval(() => {
+            scrollFunction();
+        }, 100);
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" referrerpolicy="no-referrer"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+    var animation = lottie.loadAnimation({
+        container: document.getElementById('animationContainer'), // the dom element
+        renderer: 'svg',
+        loop: 2,
+        autoplay: true,
+        path: '../images/raw/glassvoice/arrow.json' // the path to the animation json
+    });
+
+    animation.addEventListener('complete', () => {
+        document.getElementById('animationContainer').style.display = 'none';
+    });
+});
+</script>
+

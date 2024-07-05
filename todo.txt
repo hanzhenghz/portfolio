@@ -1,6 +1,3 @@
-lightroom page repetition
-  position not centered after revise
-
 front cover
   bg video/demo
 
@@ -9,3 +6,8 @@ adding works
 
 corpse
   optimizing
+
+glassvoice
+  optimizing
+
+applying topbtn script structure
