@@ -6,7 +6,6 @@ adding works
 
 corpse
   optimizing
-  horizontal scrolling
 
 glassvoice
   optimizing
