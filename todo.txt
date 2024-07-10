@@ -6,9 +6,16 @@ adding works
 
 corpse
   optimizing
+  main visual vh responsive mobile
 
 glassvoice
   optimizing
   preloading optimizing
 
+euphoric
+  topbutton to top left
+
+privilage shoes
+  bg vh responsive mobile
+  
 applying topbtn script structure
