@@ -153,3 +153,12 @@ li{
     transform: scale(1.5,1);
 }
 
+@media (max-width: 1024px) {
+    #scrollLeftBtn {
+        display: none !important;
+    }
+    #scrollRightBtn {
+        display: none !important;
+    }
+}
+
