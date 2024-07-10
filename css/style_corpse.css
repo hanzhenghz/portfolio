@@ -58,7 +58,7 @@ li{
 
 #gross {
     width: auto;
-    height: 100vh;
+    height: 100lvh;
     z-index: -11;
     position: absolute;
     justify-content: center;
@@ -69,7 +69,7 @@ li{
     z-index: -12; 
     position: absolute; 
     width: 100vw; 
-    height: 100vh; 
+    height: 100lvh; 
     background-color: black;
 }
 
