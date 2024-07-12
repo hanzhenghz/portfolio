@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/style_corpse.css">
+    <link rel="preload" href="../css/styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
+    <link rel="preload" href="../css/style_corpse.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/style_corpse.css"></noscript>
+    <link rel="preload" href="../css/style_loadingscreen.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/style_loadingscreen.css"></noscript>
+    <link rel="preload" href="https://i.imgur.com/dcRUD8n.mp4" as="video" type="video/mp4">
     <script src="../js/lightbox.js"></script>
     <meta name="referrer" content="no-referrer">
 </head>
 <body>
+
+    <div id="loadingScreen">
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+    </div>
+
     <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
 
     <div id="header">
@@ -106,6 +118,20 @@
 </footer>
 </html>
 
+
+
 <script src="../js/topbtn.js"></script>
+
+<script src="../js/loadingscreen.js"></script>
+
+<script>
+    window.onload = function() {
+        // Assuming the loading process is complete here
+        document.getElementById('loadingScreen').style.display = 'none';
+        
+        // Add the 'animate' class to start the animation
+        document.querySelector('.circle').classList.add('animate');
+    };
+</script>
 
 <script src="../js/horizontalscrolling.js"></script>

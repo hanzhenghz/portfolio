@@ -34,6 +34,9 @@ li{
     border-radius: 0%;
     position: absolute;
     z-index: -10;
+}
+
+.circle.animate {
     animation: fadeIn 1.5s cubic-bezier(0, 0, 0.01, 1) forwards,
                expand 20s 1.5s cubic-bezier(0.5, 0, 0.5, 1) forwards;
 }
