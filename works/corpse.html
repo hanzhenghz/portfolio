@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="../css/styles.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-    <link rel="preload" href="../css/style_corpse.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/style_corpse.css"></noscript>
-    <link rel="preload" href="../css/style_loadingscreen.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/style_loadingscreen.css"></noscript>
-    <script src="../js/lightbox.js"></script>
+    <script src="../js/loadingscreen.js" defer></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style_corpse.css">
+    <link rel="stylesheet" href="../css/style_loadingscreen.css">
     <meta name="referrer" content="no-referrer">
+    <script src="../js/lightbox.js"></script>
 </head>
 <body>
 
@@ -121,13 +119,8 @@
 
 <script src="../js/topbtn.js"></script>
 
-<script src="../js/loadingscreen.js"></script>
-
 <script>
     window.onload = function() {
-        // Assuming the loading process is complete here
-        document.getElementById('loadingScreen').style.display = 'none';
-        
         // Add the 'animate' class to start the animation
         document.querySelector('.circle').classList.add('animate');
     };

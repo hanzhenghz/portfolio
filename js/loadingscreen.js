@@ -1,31 +1,44 @@
- // Initial progress increment to simulate early loading phase
- let progress = 0;
- const progressBar = document.getElementById('progressBar');
- const increment = 5; // Adjust based on your needs
+let progress = 0;
+let loadedElements = 0;
+let totalElements = 0;
+const progressBar = document.getElementById('progressBar');
 
- const simulateInitialProgress = () => {
-     const interval = setInterval(() => {
-         if (progress < 50) { // Assuming DOMContentLoaded roughly accounts for 50% of the load time
-             progress += increment;
-             progressBar.style.width = progress + '%';
-         } else {
-             clearInterval(interval);
-         }
-     }, 100);
- };
- simulateInitialProgress();
+// Function to update the progress bar
+const updateProgressBar = () => {
+    progress = (loadedElements / totalElements) * 100;
+    progressBar.style.width = progress + '%';
+    if (progress >= 100) {
+        // Hide the loading screen when all elements are loaded
+        setTimeout(() => {
+            document.getElementById('loadingScreen').style.display = 'none';
+        }, 500); // Adjust delay as needed
+    }
+};
 
- // DOMContentLoaded event
- document.addEventListener('DOMContentLoaded', () => {
-     progress = 100; // Adjust assumption based on actual load time distribution
-     progressBar.style.width = progress + '%';
- });
+// Function to handle the load and error events for each element
+const handleLoadEvent = () => {
+    loadedElements++;
+    progress = (loadedElements / totalElements) * 100;
+    updateProgressBar();
+};
 
- // Window load event for finalizing the progress
- window.onload = () => {
-     progress = 100;
-     progressBar.style.width = progress + '%';
-     document.getElementById('loadingScreen').style.display = 'none';
- };
+// Detect loadable elements
+const loadableElements = document.querySelectorAll('img, script, link[rel="stylesheet"], video');
+totalElements = loadableElements.length;
 
- 
+loadableElements.forEach(element => {
+    const isImg = element.tagName === 'IMG';
+    const isVideo = element.tagName === 'VIDEO';
+
+    if (isImg && element.complete) {
+        handleLoadEvent();
+    } else {
+        element.onload = handleLoadEvent;
+        element.onerror = handleLoadEvent; // Handle errors
+    }
+});
+
+window.onload = function() {
+    // Assuming the loading process is complete here
+    document.getElementById('loadingScreen').style.display = 'none';
+}

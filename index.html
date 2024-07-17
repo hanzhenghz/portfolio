@@ -1,17 +1,22 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="../images/raw/glassvoice/glassvoice.png" as="image">
-    <link rel="preload" href="../css/styles.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
-    <link rel="preload" href="../css/style_cover.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/style_cover.css"></noscript>
-    <link rel="preload" href="../css/style_loadingscreen.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/style_loadingscreen.css"></noscript>
+    <script src="js/loadingscreen.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style_cover.css">
+    <link rel="stylesheet" href="css/style_loadingscreen.css">
     <script src="js/i18n-setup.js"></script>
 </head>
 <body>
+
+    <div id="loadingScreen">
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+    </div>
+    
     <div id="maintitle">
         <li><a href="works.html"> 
         <div class="title" data-i18n="hanzheng">Han Zheng 郑翰</div>
@@ -24,9 +29,5 @@
     </div>
 
 </body>
-
-
-
-<script src="../js/loadingscreen.js"></script>
 
 </html>
