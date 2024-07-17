@@ -23,10 +23,6 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
     
     var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
     
-
-    console.log('Selected LANGUAGE:', selectedLanguage);
-    console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
-    
     // Initialize i18next
         i18next
             .use(i18nextXHRBackend)

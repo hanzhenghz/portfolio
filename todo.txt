@@ -4,9 +4,6 @@ front cover
 adding works
   conversation spiral
 
-corpse
-  optimizing
-
 glassvoice
   optimizing
   preloading optimizing
@@ -15,3 +12,9 @@ euphoric
   topbutton to top left
   
 applying topbtn script structure
+
+i8n
+  language selection
+
+image loading 
+optimizing
