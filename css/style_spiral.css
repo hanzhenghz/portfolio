@@ -24,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: hidden;
 }
 .works2 img{
     width: 80vw;
@@ -34,7 +35,7 @@ body {
 .works3 {
     display: flex;
     flex-direction: column;
-    overflow-x: auto;
+    overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none; 
     margin-top: 50px;
