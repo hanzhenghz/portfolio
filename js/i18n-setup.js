@@ -9,6 +9,22 @@ function loadScript(src, callback) {
 // Load i18next and i18nextXHRBackend
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.3/i18next.min.js', function() {
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18nextXHRBackend.min.js', function() {
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Example based on URL path
+        if (window.location.pathname === '/index.html') {
+            console.log('This is the index page. Initializing...');
+            // Place your initialization code here
+            initializeMyProcess();
+        }
+    });
+    
+    function initializeMyProcess() {
+        // Your initialization code
+        console.log('Process initialized.');
+    }
+    
+    
     // Get the current page name
     var path = window.location.pathname;
     var page = path.split("/").pop().split(".")[0];
@@ -30,10 +46,15 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
                 backend: {
                     loadPath: 'locales/{{lng}}/' + page + '.json'
                 },
-                lng: localStorage.getItem('selectedLanguage'),
+                lng: selectedLanguage,
                 fallbackLng: 'en',
                 debug: true
             }, function(err, t) {
+                if (err) {
+                    console.log('Error during i18next initialization:', err);
+                } else {
+                    console.log('i18next initialized successfully.');
+                }
                 // resources have been loaded
                 updateContent();
             });

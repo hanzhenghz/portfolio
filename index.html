@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/style_cover.css">
     <link rel="stylesheet" href="css/style_loadingscreen.css">
-    <script src="js/i18n-setup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.3/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18nextXHRBackend.min.js"></script>
 </head>
 <body>
 
@@ -30,9 +31,122 @@
 
 </body>
 
-
 <script>
-    var selectedLanguage = localStorage.getItem('selectedLanguage')
-</script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // Example based on URL path
+        if (window.location.pathname === '/index.html') {
+            console.log('This is the index page. Initializing...');
+            // Place your initialization code here
+            initializeMyProcess();
+        }
+    });
+    
+    function initializeMyProcess() {
+        // Your initialization code
+        console.log('Process initialized.');
+    }
+    
+    
+    // Get the current page name
+    var path = window.location.pathname;
+    var page = path.split("/").pop().split(".")[0];
+    
+            // If the page name is empty, default to 'index'
+        if (page === '') {
+            page = 'index';
+        } else {
+            // If the page name is not empty, remove the extension
+            page = path.split("/").pop().split(".")[0];;
+        }
+    
+    var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    
+    // Initialize i18next
+        i18next
+            .use(i18nextXHRBackend)
+            .init({
+                backend: {
+                    loadPath: 'locales/{{lng}}/' + page + '.json'
+                },
+                lng: selectedLanguage,
+                fallbackLng: 'en',
+                debug: true
+            }, function(err, t) {
+                if (err) {
+                    console.log('Error during i18next initialization:', err);
+                } else {
+                    console.log('i18next initialized successfully.');
+                }
+                // resources have been loaded
+                updateContent();
+            });
 
+    // Update content based on current language
+    function updateContent() {
+        var elements = document.querySelectorAll('[data-i18n]');
+
+        elements.forEach(function(element) {
+            var key = element.getAttribute('data-i18n');
+            element.innerHTML = i18next.t(key);
+        });
+
+        console.log(i18next.language);
+    }
+
+    
+        // Get the language select buttons
+        var selectEnglish = document.getElementById('selectEnglish');
+        var selectChinese = document.getElementById('selectChinese');
+    
+        // Get the previously selected language from localStorage
+        var selectedLanguage = localStorage.getItem('selectedLanguage');
+    
+        // Update the appearance of the buttons based on the selected language
+        if (selectedLanguage === 'en') {
+            selectEnglish.classList.add('selected');
+            selectChinese.classList.remove('selected');
+        } else if (selectedLanguage === 'zh') {
+            selectChinese.classList.add('selected');
+            selectEnglish.classList.remove('selected');
+        }
+    
+        // Add event listeners to the buttons
+        if (selectEnglish) {
+            selectEnglish.addEventListener('click', function() {
+                console.log('English button clicked');
+                selectLanguage('en');
+            });
+        }
+    
+        if (selectChinese) {
+            selectChinese.addEventListener('click', function() {
+                console.log('Chinese button clicked');
+                selectLanguage('zh');
+            });
+        }
+    
+        // Function to select a language
+        function selectLanguage(language) {
+            // Update the language with i18next
+            i18next.changeLanguage(language, function(err, t) {
+                if (err) return console.log('something went wrong loading', err);
+                updateContent();
+            });
+    
+            // Update the appearance of the buttons
+            if (language === 'en') {
+                selectEnglish.classList.add('selected');
+                selectChinese.classList.remove('selected');
+            } else {
+                selectChinese.classList.add('selected');
+                selectEnglish.classList.remove('selected');
+            }
+    
+            localStorage.setItem('selectedLanguage', language);
+        }
+
+        document.addEventListener('click', function(event) {
+    });
+</script>
 </html>
