@@ -19,7 +19,7 @@ body, html {
     height: 100vh; /* Adjust based on your needs */
     display: flex;
     object-fit: fill;
-    
+    background-color: black;
 }
 
 #scrollContainer {
