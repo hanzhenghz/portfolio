@@ -7,6 +7,7 @@ adding works
 glassvoice
   optimizing
   preloading optimizing
+  arrow start after loading
 
 euphoric
   topbutton to top left
@@ -18,3 +19,5 @@ i8n
 
 image loading 
 optimizing
+cdn in wall https://www.uhsea.com/  https://playground.z.wiki/img-cloud/index.html
+mobile cdn display bug /corpse /glassvoice
