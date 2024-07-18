@@ -9,6 +9,9 @@ glassvoice
   preloading optimizing
   arrow start after loading
 
+Corpse
+  overflow-x on mobile
+  
 euphoric
   topbutton to top left
   
