@@ -3,6 +3,8 @@ let loadedElements = 0;
 let totalElements = 0;
 const progressBar = document.getElementById('progressBar');
 
+document.body.style.overflow = 'hidden';
+
 // Function to update the progress bar
 const updateProgressBar = () => {
     progress = (loadedElements / totalElements) * 100;
@@ -11,6 +13,7 @@ const updateProgressBar = () => {
         // Hide the loading screen when all elements are loaded
         setTimeout(() => {
             document.getElementById('loadingScreen').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }, 500); // Adjust delay as needed
     }
 };
@@ -41,4 +44,5 @@ loadableElements.forEach(element => {
 window.onload = function() {
     // Assuming the loading process is complete here
     document.getElementById('loadingScreen').style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
