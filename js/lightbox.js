@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('lightbox').style.display = 'flex'; // Show the lightbox
       document.getElementById('lightbox').style.alignItems = 'center';
       document.getElementById('lightbox').style.justifyContent = 'center';
+      document.body.style.overflow = 'hidden';
       history.replaceState(null, '', window.location.pathname + window.location.search); // Remove #lightbox from URL without affecting history
       event.preventDefault(); // Prevent the default anchor action
     });
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById('lightbox').addEventListener('click', function(event) {
     if (event.target.id !== 'lightbox-img') { // If the clicked element is not the lightbox image
-      this.style.display = 'none'; // Hide the lightbox
+      closeLightbox(); // Hide the lightbox
       history.replaceState(null, '', window.location.pathname + window.location.search); // Ensure URL does not change to #close
     }
   });
@@ -36,6 +37,7 @@ function openLightbox(event) {
   document.getElementById('lightbox').style.display = 'flex';
   document.getElementById('lightbox').style.alignItems = 'center';
   document.getElementById('lightbox').style.justifyContent = 'center';
+  document.body.style.overflow = 'hidden';
   // Remove #lightbox from URL without affecting history
   history.replaceState(null, '', window.location.pathname + window.location.search);
   event.preventDefault();
@@ -44,6 +46,7 @@ function openLightbox(event) {
 // Function to close the lightbox and clean up the URL
 function closeLightbox() {
   document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = 'auto';
   // Ensure URL does not change in a way that affects browser history negatively
   history.replaceState(null, '', window.location.pathname + window.location.search);
 }
