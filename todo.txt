@@ -24,3 +24,8 @@ mobile cdn display bug /corpse /glassvoice
 
 /0924
 青春MK1
+  finalizing contect
+
+i18n
+  works catalog pages not loading locales file
+  way to sync all header locales in pages
