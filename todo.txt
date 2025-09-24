@@ -17,10 +17,10 @@ euphoric
   
 applying topbtn script structure
 
-i8n
-  language selection
-
 image loading 
 optimizing
 cdn in wall https://www.uhsea.com/  https://playground.z.wiki/img-cloud/index.html
 mobile cdn display bug /corpse /glassvoice
+
+/0924
+青春MK1

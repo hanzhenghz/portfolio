@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/loadingscreen.js" defer></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style_seishunmk1.css">
+    <link rel="stylesheet" href="../css/style_loadingscreen.css">
+    <meta name="referrer" content="no-referrer">
+    <script src="../js/lightbox.js"></script>
+</head>
+
+<body>
+    
+<div id="loadingScreen">
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
+    </div>
+</div>
+    
+    <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
+    
+
+    <div id="header">
+        <ul id="nav">
+            <li><a href="..">HOME</a></li>
+            <li><a href="../works.html">WORKS</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+        </ul>
+    </div>
+
+              
+    <div id="focus">
+        <img src="../images/raw/seishunmk1/right.png">
+        <div id="title">
+            <p style="font-size: clamp(10vh, 15vh, 50vh); line-height: 80%;">青春 MK1</p>
+            <p style="font-size: clamp(8vh, 5vh, 30vh);">2025.05</p>
+        </div>
+    </div>
+
+    <div id="body">      
+        
+        
+        <br>
+
+        <div class="textparagraph">
+            <p>n/a
+            </p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/seishunmk1/right.png">
+            <img src="../images/raw/seishunmk1/right.png" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/seishunmk1/left.png">
+            <img src="../images/raw/seishunmk1/left.png" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <br>
+        
+        <div class="works">
+            <a href="#lightbox" data-lightbox-src="../images/raw/seishunmk1/rear.png">
+                    <img src="../images/raw/seishunmk1/rear.png" style="max-width: 80%;">
+            </a>
+        </div>
+
+        <div id="lightbox">
+            <a>&times;</a>
+              <img id="lightbox-img" src="" style="max-width: 80%;">
+        </div>
+    </div> 
+</body>
+<footer id="footer">
+        
+    <ul id="nav">
+        <div class="footer-content">
+            <p></p>
+        </div>
+    </ul>
+</footer>
+<script src="/js/footer.js"></script>
+</html>
+
+
+<script src="../js/scrollplayback.js"></script>
+
+<script>
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20) {
+    document.getElementById("topbtn").style.display = "block";
+  } else {
+    document.getElementById("topbtn").style.display = "none";
+  }
+}
+
+scrollContainer.addEventListener('scroll', scrollFunction);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+        setInterval(() => {
+            scrollFunction();
+        }, 100);
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" referrerpolicy="no-referrer"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+    var animation = lottie.loadAnimation({
+        container: document.getElementById('animationContainer'), // the dom element
+        renderer: 'svg',
+        loop: 2,
+        autoplay: true,
+        path: '../images/raw/glassvoice/arrow.json' // the path to the animation json
+    });
+
+    animation.addEventListener('complete', () => {
+        document.getElementById('animationContainer').style.display = 'none';
+    });
+});
+</script>
+
