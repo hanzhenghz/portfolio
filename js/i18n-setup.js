@@ -39,13 +39,31 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
     
     var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
     
-    // Initialize i18next
+    // Determine the correct path based on folder nesting
+    var pathDepth = window.location.pathname.split('/').length - 2;
+    var basePath = '';
+    for (var i = 0; i < pathDepth; i++) {
+        basePath += '../';
+    }
+    // If we're in a subfolder, adjust the path
+    if (window.location.pathname.includes('/works/')) {
+        basePath = '../';
+    }
+    
+    // Initialize i18next with multiple namespaces
         i18next
             .use(i18nextXHRBackend)
             .init({
                 backend: {
-                    loadPath: 'locales/{{lng}}/' + page + '.json',
-                    allowMultiLoading: false,
+                    loadPath: function(lngs, namespaces) {
+                        // Load common namespace for all pages, and page-specific namespace
+                        if (namespaces[0] === 'common') {
+                            return basePath + 'locales/{{lng}}/common.json';
+                        } else {
+                            return basePath + 'locales/{{lng}}/' + page + '.json';
+                        }
+                    },
+                    allowMultiLoading: true,
                     crossDomain: false
                 },
                 lng: selectedLanguage,
@@ -53,7 +71,9 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
                 debug: true,
                 load: 'languageOnly',
                 preload: ['en', 'zh'],
-                saveMissing: false
+                saveMissing: false,
+                ns: ['common', 'page'],
+                defaultNS: 'page'
             }, function(err, t) {
                 if (err) {
                     console.log('Error during i18next initialization:', err);
@@ -70,10 +90,22 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18
 
         elements.forEach(function(element) {
             var key = element.getAttribute('data-i18n');
-            element.innerHTML = i18next.t(key);
+            var namespace = element.getAttribute('data-i18n-ns') || 'page';
+            
+            // If namespace is specified, use it; otherwise try both namespaces
+            if (namespace === 'common') {
+                element.innerHTML = i18next.t(key, { ns: 'common' });
+            } else {
+                // Try page namespace first, then common as fallback
+                var translation = i18next.t(key, { ns: 'page' });
+                if (translation === key) {
+                    translation = i18next.t(key, { ns: 'common' });
+                }
+                element.innerHTML = translation;
+            }
         });
 
-        console.log(i18next.language);
+        console.log('Current language:', i18next.language);
     }
 
     

@@ -27,5 +27,7 @@ mobile cdn display bug /corpse /glassvoice
   finalizing contect
 
 i18n
-  works catalog pages not loading locales file
-  way to sync all header locales in pages
+  detail locales in individual work page (eg. high pitch warning)
+
+spiral
+  overflow-x not correct

@@ -10,6 +10,12 @@ body, html {
     position: absolute;
     z-index: 10;
     mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 12vh;
+    z-index: 10;
+    align-items: center;
 }
 
 .scrollWrapper {

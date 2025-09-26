@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/loadingscreen.js" defer></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style_loadingscreen.css">
     <script src="../js/lightbox.js"></script>
 </head>
+
 <body>
+
+    <div id="loadingScreen">
+        <div id="progressBarContainer">
+            <div id="progressBar"></div>
+        </div>
+    </div>
+
     <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
 
     <div id="header">
         <ul id="nav">
-            <li><a href="..">HOME</a></li>
-            <li><a href="../works.html">WORKS</a></li>
-            <li><a href="../about.html">ABOUT</a></li>
+            <li><a data-i18n="navigation.HOME" data-i18n-ns="common" href="..">HOME</a></li>
+            <li><a data-i18n="navigation.WORKS" data-i18n-ns="common" href="../works.html">WORKS</a></li>
+            <li><a data-i18n="navigation.ABOUT" data-i18n-ns="common" href="../about.html">ABOUT</a></li>
         </ul>
     </div> 
+
     <div id="body">
         
         <div class="works">
@@ -49,7 +60,8 @@
         </div>
     </ul>
 </footer>
-<script src="/js/footer.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/i18n-setup.js"></script>
 </html>
 
 <script src="../js/topbtn.js"></script>
