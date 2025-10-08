@@ -22,12 +22,19 @@ optimizing
 cdn in wall https://www.uhsea.com/  https://playground.z.wiki/img-cloud/index.html
 mobile cdn display bug /corpse /glassvoice
 
-/0924
+
+
+/0926
 青春MK1
   finalizing contect
 
 i18n
+  common showing navigation., instead actual
   detail locales in individual work page (eg. high pitch warning)
 
 spiral
   overflow-x not correct
+
+page title
+
+image resolu optimizing
