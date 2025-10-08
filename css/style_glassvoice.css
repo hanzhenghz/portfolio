@@ -5,6 +5,7 @@ body, html {
 
 #scrollplaycover {
     position: relative;
+    overflow-x: hidden;
 }
 #header {
     position: absolute;
