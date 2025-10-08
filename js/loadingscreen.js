@@ -47,14 +47,11 @@ function countResources() {
     // Add base progress for DOM readiness
     totalResources += 1;
     
-    console.log(`Total resources to load: ${totalResources}`);
 }
 
 function updateProgress(resourceName = '') {
     loadedResources++;
     progress = Math.min((loadedResources / totalResources) * 100, 100);
-    
-    console.log(`Loaded: ${resourceName} (${loadedResources}/${totalResources}) - ${progress.toFixed(1)}%`);
     
     if (progressBar) {
         progressBar.style.width = progress + '%';
@@ -62,7 +59,6 @@ function updateProgress(resourceName = '') {
     
     // Hide loading screen when complete
     if (progress >= 100) {
-        console.log('All resources loaded, hiding loading screen...');
         setTimeout(hideLoadingScreen, 300);
     }
 }
@@ -145,7 +141,6 @@ if (document.readyState === 'loading') {
 window.addEventListener('load', () => {
     // If progress hasn't reached 100% yet, force completion
     if (progress < 100) {
-        console.log('Window load event: forcing completion');
         while (loadedResources < totalResources) {
             updateProgress('Forced completion');
         }
@@ -154,7 +149,6 @@ window.addEventListener('load', () => {
     // Backup timer - absolutely ensure loading screen disappears
     setTimeout(() => {
         if (loadingScreen && loadingScreen.style.display !== 'none') {
-            console.log('Backup: forcing loading screen to hide');
             hideLoadingScreen();
         }
     }, 2000);

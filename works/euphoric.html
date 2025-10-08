@@ -3,10 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/loadingscreen.js" defer></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style_euphoric.css">
     <link rel="stylesheet" href="../css/style_loadingscreen.css">
+    <script> //loading screen script for larger single image
+    class ImageProgressLoader {
+        constructor() {
+            this.loadingScreen = null;
+            this.progressBar = null;
+            this.progress = 0;
+        }
+
+        init() {
+            this.loadingScreen = document.getElementById('loadingScreen');
+            this.progressBar = document.getElementById('progressBar');
+            
+            if (!this.loadingScreen || !this.progressBar) {
+                setTimeout(() => this.init(), 10);
+                return;
+            }
+
+            this.loadingScreen.style.display = 'flex';
+            this.loadingScreen.style.opacity = '1';
+            
+            // Find the main image to track
+            this.trackMainImage();
+        }
+
+        async trackMainImage() {
+            const mainImg = document.querySelector('.works img[data-auto-srcset]');
+            
+            if (!mainImg) {
+                console.warn('No main image found, using fallback loading');
+                this.fallbackLoading();
+                return;
+            }
+
+            // Wait for auto-srcset to generate the srcset
+            await this.waitForSrcset(mainImg);
+            
+            // Get the image URL that will actually be loaded
+            const imageUrl = this.getActualImageUrl(mainImg);
+            
+            
+            try {
+                await this.loadImageWithProgress(imageUrl, mainImg);
+            } catch (error) {
+                console.error('Error loading image:', error);
+                this.hideLoadingScreen();
+            }
+        }
+
+        async waitForSrcset(img) {
+            return new Promise((resolve) => {
+                const checkSrcset = () => {
+                    if (img.srcset && img.srcset.length > 0) {
+                        resolve();
+                    } else {
+                        setTimeout(checkSrcset, 50);
+                    }
+                };
+                checkSrcset();
+            });
+        }
+
+        getActualImageUrl(img) {
+            // Browser selects the best image from srcset
+            // We need to simulate this selection
+            const viewport = window.innerWidth;
+            const devicePixelRatio = window.devicePixelRatio || 1;
+            const requiredWidth = viewport * devicePixelRatio;
+
+            // Parse srcset to find best match
+            const sources = img.srcset.split(',').map(src => {
+                const [url, width] = src.trim().split(' ');
+                return {
+                    url: url.trim(),
+                    width: parseInt(width.replace('w', ''))
+                };
+            });
+
+            // Find the best match (smallest image that's still large enough)
+            let selectedSource = sources[0];
+            for (const source of sources) {
+                if (source.width >= requiredWidth) {
+                    selectedSource = source;
+                    break;
+                }
+                selectedSource = source; // Keep the largest if none are big enough
+            }
+
+            return selectedSource.url;
+        }
+
+        async loadImageWithProgress(imageUrl, imgElement) {
+            try {
+                const response = await fetch(imageUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const contentLength = response.headers.get('content-length');
+                
+                if (!contentLength) {
+                    console.warn('No content-length header, using fallback');
+                    return this.loadImageFallback(imageUrl, imgElement);
+                }
+
+                const total = parseInt(contentLength);
+                let loaded = 0;
+
+                const reader = response.body.getReader();
+                const chunks = [];
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    
+                    if (done) break;
+                    
+                    chunks.push(value);
+                    loaded += value.length;
+                    
+                    const progress = Math.round((loaded / total) * 100);
+                    this.updateProgress(progress);
+                }
+
+                // Create blob from chunks and set as image source
+                const blob = new Blob(chunks);
+                const imageObjectURL = URL.createObjectURL(blob);
+                
+                imgElement.src = imageObjectURL;
+                
+                // Clean up the object URL after image loads
+                imgElement.onload = () => {
+                    URL.revokeObjectURL(imageObjectURL);
+                    this.hideLoadingScreen();
+                };
+
+            } catch (error) {
+                console.error('Fetch failed, using fallback:', error);
+                this.loadImageFallback(imageUrl, imgElement);
+            }
+        }
+
+        loadImageFallback(imageUrl, imgElement) {
+            // Fallback: simulate progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    this.hideLoadingScreen();
+                }
+                this.updateProgress(progress);
+            }, 200);
+
+            // Set image source normally
+            imgElement.src = imageUrl;
+            imgElement.onload = () => {
+                clearInterval(interval);
+                this.updateProgress(100);
+                setTimeout(() => this.hideLoadingScreen(), 300);
+            };
+        }
+
+        updateProgress(percent) {
+            this.progress = Math.min(percent, 100);
+            if (this.progressBar) {
+                this.progressBar.style.width = this.progress + '%';
+            }
+        }
+
+        fallbackLoading() {
+            // Fallback for when no main image is found
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                this.updateProgress(progress);
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    this.hideLoadingScreen();
+                }
+            }, 100);
+        }
+
+        hideLoadingScreen() {
+            if (this.loadingScreen) {
+                this.loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    this.loadingScreen.style.display = 'none';
+                    document.body.classList.add('loaded');
+                }, 500);
+            }
+        }
+    }
+
+    // Initialize the image progress loader
+    const imageLoader = new ImageProgressLoader();
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => imageLoader.init());
+    } else {
+        imageLoader.init();
+    }
+    </script>
     <script src="../js/lightbox.js"></script>
+    <script src="../js/auto-srcset.js"></script>
 </head>
 
 <body>
@@ -31,14 +235,14 @@
         
         <div class="works">
             <a href="#lightbox" data-lightbox-src="../images/raw/euphoric/euphoric.jpg">
-              <img src="../images/raw/euphoric/euphoric.jpg">
+              <img src="../images/raw/euphoric/euphoric.jpg" data-auto-srcset="../images/raw/euphoric" data-sizes="(max-width: 640px) 100vw, (max-width: 960px) 100vw, 100vw">
             </a>
         </div>
 
         <br>
         <br>
 
-        <div class="textparagraph" style="font-size: 40px;">
+        <div class="textparagraph">
           <p>EUPHORIC
           <br>
             2021.10

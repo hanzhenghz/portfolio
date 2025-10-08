@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Enable scrolling in all directions */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Keep header fixed */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    background: transparent;
+    mix-blend-mode: exclusion;
+}
+
+#header *{
+    color: black;
+    font-weight: bold;
+    text-shadow: 
+        0px 0px 5px white,   
+        0px 0px 5px white,   
+        0px 0px 5px white,   
+        0px 0px 5px white,   
+        0px 0px 5px white;
+}
+
+.works {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    transform-origin: center center;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Hide any overflow */
+}
+
+.textparagraph {
+    position: fixed;
+    bottom: 10vh;
+    color: black;
+    font-size: 5vmax;
+    font-weight: bold;
+    mix-blend-mode: difference;
+        text-shadow: 
+        0px 0px 30px white,   
+        0px 0px 30px white,   
+        0px 0px 30px white,   
+        0px 0px 30px white,   
+        0px 0px 30px white;
+}
+
+#footer {
+    position: fixed;
+    bottom: 2vh;
+    left:10vw;
+    white-space: nowrap;
+    color: black;
+    font-weight: bold;
+    mix-blend-mode: difference;
+        text-shadow: 
+        0px 0px 2px white,   
+        0px 0px 2px white,   
+        0px 0px 2px white,   
+        0px 0px 2px white,   
+        0px 0px 2px white;
+}
