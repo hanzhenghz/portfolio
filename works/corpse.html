@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/style_loadingscreen.css">
     <meta name="referrer" content="no-referrer">
     <script src="../js/lightbox.js"></script>
+    <script src="../js/auto-srcset.js"></script>
 </head>
 <body>
 
@@ -50,21 +51,18 @@
         <div class="textparagraph" style="font-size: 30px;">
             <p>Medium:
             <br>
-            2*4 fir plank, walnut, Corpse
+            2*4 fir plank, walnut, Corpse Eau de Parfum
             </p>
         </div>
         
         <div class="works">
             <button id="scrollLeftBtn">&lt;</button>
             <div id="workshorizontalsub1">
-            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse.jpg">
-                <img src="../images/raw/corpse/corpse.jpg">
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse/raw.jpg">
+                <img src="../images/raw/corpse/corpse/raw.jpg" data-auto-srcset="../images/raw/corpse/corpse" data-sizes="(max-width: 640px) 50vw, (max-width: 960px) 50vw, 50vw">
             </a>
-            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse3.jpg">
-                <img src="../images/raw/corpse/corpse3.jpg">
-            </a>
-            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse2.jpg">
-                <img src="../images/raw/corpse/corpse2.jpg">
+            <a href="#lightbox" data-lightbox-src="../images/raw/corpse/corpse3/raw.jpg">
+                <img src="../images/raw/corpse/corpse3/raw.jpg" data-auto-srcset="../images/raw/corpse/corpse3" data-sizes="(max-width: 640px) 50vw, (max-width: 960px) 50vw, 50vw">
             </a>
             </div>
             <button id="scrollRightBtn">&gt;</button>
