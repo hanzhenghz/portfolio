@@ -35,19 +35,18 @@
 <div id="videoOverlay"></div>
 <div id="animationContainer"></div>
 <div class="scrollWrapper">
-    <div id="scrollContainer">
-        <video id="scrollVideo" preload="metadata">
-            <source src="https://file.uhsea.com/2407/64bdddbbb297ddcd1e9b2bbe9328934ePG.mp4" type="video/mp4">
-            <source src="../images/raw/glassvoice/glassvoice_vid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div style="height: 1500px;"></div>
+    <div id="scrollContainer"
+        data-sequence-path="../images/raw/glassvoice/glassvoice_vid/"
+        data-total-frames="180"
+        data-frame-prefix="frame-"
+        data-frame-extension=".jpg"
+        data-frame-padding="1">
     </div>
 </div>
 </div>
 
     <div id="body">
-        <div class="textparagraph" style="font-size: 40px;">
+        <div class="textparagraph" style="font-size: 8vh; position: relative; top: -15vh;  z-index: 10; mix-blend-mode: difference;">
             <p>Glass Voice, 2023.02
             </p>
         </div>
@@ -108,7 +107,11 @@
             <a>&times;</a>
               <img id="lightbox-img" src="" style="max-width: 80%;">
         </div>
-    </div> 
+    </div>
+
+<!-- Scroll trigger area for image sequence animation -->
+<div id="scrollTrigger" style="height: 300vh; background: transparent; pointer-events: none;"></div>
+
 </body>
 <footer id="footer">
         
@@ -120,29 +123,23 @@
 </footer>
 <script src="../js/footer.js"></script>
 <script src="../js/i18n-setup.js"></script>
-</html>
-
-
-<script src="../js/scrollplayback.js"></script>
+<script src="../js/scrollimagesequence.js"></script>
 
 <script>
-
 function scrollFunction() {
-  if (document.body.scrollTop > 20) {
+  if (window.pageYOffset > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("topbtn").style.display = "block";
   } else {
     document.getElementById("topbtn").style.display = "none";
   }
 }
 
-scrollContainer.addEventListener('scroll', scrollFunction);
-
+// Use window scroll instead of scrollContainer
+window.addEventListener('scroll', scrollFunction, { passive: true });
 
 document.addEventListener('DOMContentLoaded', () => {
-        setInterval(() => {
-            scrollFunction();
-        }, 100);
-    });
+    scrollFunction(); // Initial call
+});
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" referrerpolicy="no-referrer"></script>

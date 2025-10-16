@@ -42,3 +42,7 @@ page title
 图床 墙外
 
 image resolu optimizing (done:corpse, glassvoice, seishun)
+
+/1015
+corpse, seishun, header top margin not the same
+keep working on glassvoice scrollplay

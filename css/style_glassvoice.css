@@ -19,33 +19,6 @@ body, html {
     align-items: center;
 }
 
-.scrollWrapper {
-    position: relative;
-    width: 100vw; /* Viewport width */
-    overflow: hidden; /* Hide overflow including the scrollbar */
-    height: 100vh; /* Adjust based on your needs */
-    display: flex;
-    object-fit: fill;
-    background-color: black;
-}
-
-#scrollContainer {
-    max-width: 100%;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    overflow-y: scroll; /* Ensure vertical scrolling is still possible */
-    overflow-x: hidden;
-}
-
-#scrollVideo {
-    height: 100vh;
-    width: 100vw;
-    position: sticky;
-    top: 0;
-    object-fit: cover;
-    object-position: top left;
-}
-
 #videoOverlay {
     position: absolute;
     top: 0;
