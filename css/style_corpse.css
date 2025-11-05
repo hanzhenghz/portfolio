@@ -10,7 +10,7 @@ body {
     height: 12vh;
     z-index: 10;
     display: flex;
-    align-items: center;
+    align-items: bottom;
 }
 
 li{
