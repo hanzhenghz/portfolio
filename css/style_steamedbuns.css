@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+#focus {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: -10;
+    margin-top: -10vh;
+}
+
+#focus img{
+    max-width: 100vh;
+    max-width: 100vw;
+}

@@ -43,3 +43,6 @@ page title
 
 image resolu optimizing (done:corpse, glassvoice, seishun)
 
+
+/1130
+glassvoice load slow
