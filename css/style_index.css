@@ -1,0 +1,16 @@
+body {
+    overflow: hidden;
+}
+
+.title {
+    font-size: 8vw;
+    margin: 2vh;
+}
+
+.links {
+    font-size: 5vw;
+}
+
+li {
+    margin: -1vh 0;
+}
