@@ -1,9 +1,6 @@
 front cover
   bg video/demo
 
-adding works
-  conversation spiral
-
 glassvoice
   optimizing
   preloading optimizing
@@ -15,7 +12,6 @@ Corpse
 euphoric
   topbutton to top left
   
-applying topbtn script structure
 
 image loading 
 optimizing
@@ -34,8 +30,6 @@ i18n
 
 spiral
   overflow-x not correct
-
-page title
 
 
 /1008
