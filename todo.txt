@@ -40,3 +40,5 @@ image resolu optimizing (done:corpse, glassvoice, seishun, steamedbuns, moment, 
 
 /1130
 glassvoice load slow
+
+.
