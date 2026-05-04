@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #2F2623;
     overflow-x: hidden;
 }
 
@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     z-index: -10;
-    margin-top: -10vh;
+    margin-top: -20vh;
 }
 
 #focus img{
