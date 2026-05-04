@@ -1,14 +1,12 @@
-body {
-    overflow: hidden;
-}
-
 .title {
     font-size: 8vw;
+     font-size: clamp(2rem, 8vw, 4rem);
     margin: 2vh;
 }
 
 .links {
-    font-size: 5vw;
+    margin-top: -2vh;
+    font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 li {

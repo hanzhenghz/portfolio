@@ -9,18 +9,17 @@ body {
 #maintitle {
     display: flex;
     flex-direction: column;
-    color: #666666;
     justify-content: center;
     align-items: center;
-    margin-top: 35vh;
+    margin-top: 3vh;
+    height: 24vh;
     list-style: none;
-    padding-top: 20px;
-    padding-bottom: 30px;
     background-color: white;
 }
 
 .title {
     font-size: 8vw;
+    color: #666666;
 }
  
 #header {

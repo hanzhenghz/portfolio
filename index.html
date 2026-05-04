@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/loadingscreen.js" defer></script>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/style_cover.css">
     <link rel="stylesheet" href="css/style_loadingscreen.css">
+    <link rel="stylesheet" href="css/style_cover.css">
     <link rel="stylesheet" href="css/style_index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.3/i18next.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-xhr-backend/3.2.2/i18nextXHRBackend.min.js"></script>
+    <script src="js/loadingscreen.js" defer></script>
+    <script src="js/i18n-setup.js"></script>
 
-    
-    <title>Han Zheng</title>
+    <title>Works - Han</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
 </head>
-
 <body>
 
     <div id="loadingScreen">
@@ -28,142 +24,118 @@
     <div id="maintitle">
         <div class="title" data-i18n="hanzheng">Han Zheng 郑翰</div>
 
-        <li><a href="works.html"> 
-        <div class="links" data-i18n="works">Works</div>
-        <div style="width: 18vw; height: 2px; background-color: currentColor;"></div>
-        </a></li>
-
         <li><a href="about.html"> 
         <div class="links" data-i18n="about">About</div>
-        <div style="width: 18vw; height: 2px; background-color: currentColor;"></div>
+        <div style="width: 18vw; height: 2px; max-width: 190px; min-width: 70px; background-color: currentColor;"></div>
         </a></li>
 
         <br>
         
-        <!-- <div id="eng-zh">
-            <span id="selectEnglish" class="language-select">Eng</span> &nbsp;/&nbsp; <span id="selectChinese" class="language-select">中文</span>
-        </div>
-        -->
     </div>
 
+    <div class="spacer" style="display: block; height: 5vh;"></div>
+
+    <button onclick="topFunction()" id="topbtn" title="Go to top">⋀</button>
+
+    <div id="body">
+        <div id="catalog">
+            <a href="works/steamedbuns.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/steamedbuns_compressed.jpg" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="steamedbuns"> Cooking steamed buns for Ari, Ashiya, Cal, Charles, Chloe, Cole, Derrick, Di, Edith, Elsa, Jin, Karma, Lia, Maddie, Megita, Natalie, Njari, Reed, Rey, Rose, Xaria, Yoochan, and Zibby</div>
+                </div>
+            </a>
+
+            <a href="works/seishunmk1.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/seishunmk1_compressed.jpg" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="seishunmk1"> Seishun MK1</div>
+                </div>
+            </a>
+
+            <a href="works/glassvoice.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/glassvoice_compressed.png" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="glassvoice"> Glass Voice</div>
+                </div>
+            </a>
+            
+            <a href="works/corpse.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/corpse_compressed.jpg" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="corpse"> This Corpse</div>
+                </div>
+            </a>
+            
+            <a href="works/otakumanual.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/otakumanual.jpg" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="otakumanual"> The Manual of "How to Quit Otaku"</div>
+                </div>
+            </a>
+            
+            <a href="works/spiral.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/spiral.jpg" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="spiral"> Conversation in Spiral </div>
+                </div>
+            </a>
+
+            <a href="works/privilegeshoes.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/privilegeshoes_compressed.jpg" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="privilegeshoes"> A privilege gifted to who was and who is quiet</div>
+                </div>
+            </a>
+            
+            <a href="works/3.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/3_compressed.jpg" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="3"> [3] with Brenna, Han and Reed </div>
+                </div>
+            </a>
+            
+            <a href="works/pulsing.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/pulsing_compressed.png" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="pulsing"> Extended structure from pulses</div>
+                </div>
+            </a>
+            
+            <a href="works/pedestals.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/pedestals_compressed.png" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="pedestals"> Pedestals</div>
+                </div>
+            </a>
+            
+            <a href="works/moment.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/moment_compressed.png" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="moment"> Moment </div>
+                </div>
+            </a>
+            
+            <!--<a href="works/euphoric.html" style="text-decoration: none;">
+                <div class="image-container">
+                    <img src="images/compressed/euphoric_compressed.png" style="max-width: 100%;">
+                    <div class="image-title" data-i18n="euphoric"> EUPHORIC </div>
+                </div>
+            </a>
+            /!-->
+            
+        </div>  
+    </div>  
 </body>
-
-<script>
+<footer id="footer">
         
-        document.addEventListener('DOMContentLoaded', function() {
-        // Example based on URL path
-        if (window.location.pathname === '/index.html') {
-            console.log('This is the index page. Initializing...');
-            // Place your initialization code here
-            initializeMyProcess();
-        }
-    });
-    
-    function initializeMyProcess() {
-        // Your initialization code
-        console.log('Process initialized.');
-    }
-    
-    
-    // Get the current page name
-    var path = window.location.pathname;
-    var page = path.split("/").pop().split(".")[0];
-    
-            // If the page name is empty, default to 'index'
-        if (page === '') {
-            page = 'index';
-        } else {
-            // If the page name is not empty, remove the extension
-            page = path.split("/").pop().split(".")[0];;
-        }
-    
-    var selectedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-    
-    // Initialize i18next
-        i18next
-            .use(i18nextXHRBackend)
-            .init({
-                backend: {
-                    loadPath: 'locales/{{lng}}/' + page + '.json'
-                },
-                lng: selectedLanguage,
-                fallbackLng: 'en',
-                debug: true
-            }, function(err, t) {
-                if (err) {
-                    console.log('Error during i18next initialization:', err);
-                } else {
-                    console.log('i18next initialized successfully.');
-                }
-                // resources have been loaded
-                updateContent();
-            });
-
-    // Update content based on current language
-    function updateContent() {
-        var elements = document.querySelectorAll('[data-i18n]');
-
-        elements.forEach(function(element) {
-            var key = element.getAttribute('data-i18n');
-            element.innerHTML = i18next.t(key);
-        });
-
-        console.log(i18next.language);
-    }
-
-    
-        // Get the language select buttons
-        var selectEnglish = document.getElementById('selectEnglish');
-        var selectChinese = document.getElementById('selectChinese');
-    
-        // Get the previously selected language from localStorage
-        var selectedLanguage = localStorage.getItem('selectedLanguage');
-    
-        // Update the appearance of the buttons based on the selected language
-        if (selectedLanguage === 'en') {
-            selectEnglish.classList.add('selected');
-            selectChinese.classList.remove('selected');
-        } else if (selectedLanguage === 'zh') {
-            selectChinese.classList.add('selected');
-            selectEnglish.classList.remove('selected');
-        }
-    
-        // Add event listeners to the buttons
-        if (selectEnglish) {
-            selectEnglish.addEventListener('click', function() {
-                console.log('English button clicked');
-                selectLanguage('en');
-            });
-        }
-    
-        if (selectChinese) {
-            selectChinese.addEventListener('click', function() {
-                console.log('Chinese button clicked');
-                selectLanguage('zh');
-            });
-        }
-    
-        // Function to select a language
-        function selectLanguage(language) {
-            // Update the language with i18next
-            i18next.changeLanguage(language, function(err, t) {
-                if (err) return console.log('something went wrong loading', err);
-                updateContent();
-            });
-    
-            // Update the appearance of the buttons
-            if (language === 'en') {
-                selectEnglish.classList.add('selected');
-                selectChinese.classList.remove('selected');
-            } else {
-                selectChinese.classList.add('selected');
-                selectEnglish.classList.remove('selected');
-            }
-    
-            localStorage.setItem('selectedLanguage', language);
-        }
-
-        document.addEventListener('click', function(event) {
-    });
-</script>
+    <ul id="nav">
+        <div class="footer-content">
+            <p></p>
+        </div>
+    </ul>
+</footer>
+<script src="/js/footer.js"></script>
 </html>
+
+<script src="../js/topbtn.js"></script>
