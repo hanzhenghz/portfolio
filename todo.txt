@@ -45,3 +45,6 @@ glassvoice load slow
 
 /0504
 seishun + glassvoice missing gotop button
+
+/0505
+(update for jpg JPG)
