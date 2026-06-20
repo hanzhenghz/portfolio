@@ -50,12 +50,12 @@ const float LINE_SHARPNESS    = 200.0;
 const float GRAIN_SCALE       = 1.0;
 const float GRAIN_STRENGTH    = 0.1;
 
-const float GAMMA             = 7.2;
+const float GAMMA             = 8.0;
 
-const float CONTRAST          = 10.0;
+const float CONTRAST          = 5.0;
 
-const float THRESHOLD_LOW     = 0.05;
-const float THRESHOLD_HIGH    = 0.4;
+const float THRESHOLD_LOW     = 0.35;
+const float THRESHOLD_HIGH    = 0.8;
 
 //----------------------------------
 // NOISE FUNCTIONS
