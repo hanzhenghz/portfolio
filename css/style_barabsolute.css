@@ -12,8 +12,8 @@ canvas {
 }
 
 @font-face {
-  font-family: 'Engravers MT';
-  src: url('../fonts/ENGR.TTF') format('ttf'),
+  font-family: 'Engravers';
+  src: url('../fonts/ENGR.woff2') format('woff2'),
 }
 
 .title {
@@ -21,7 +21,7 @@ canvas {
     top: 1vh;;
     left: 3vw;
     font-size: 13vw;
-    font-family: 'Engravers MT';
+    font-family: 'Engravers';
     color: rgb(255, 255, 255);
     mix-blend-mode: difference;
     line-height: 1px;
@@ -30,7 +30,7 @@ canvas {
 .footer-content{
     position: fixed;
     font-size: clamp(0.875rem, 0.5rem + 1.2vw, 1.125rem);
-    font-family: 'Engravers MT';
+    font-family: 'Engravers';
     color: rgb(255, 255, 255);
     mix-blend-mode: difference;
     bottom: 1vh;;
