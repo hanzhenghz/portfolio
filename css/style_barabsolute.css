@@ -27,6 +27,16 @@ canvas {
     line-height: 1px;
 }
 
+.info {
+    margin-top: -10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 18px;
+    vertical-align: middle;
+    line-height: normal;
+}
+
 .footer-content{
     position: fixed;
     font-size: clamp(0.875rem, 0.5rem + 1.2vw, 1.125rem);
