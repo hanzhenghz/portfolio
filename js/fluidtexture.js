@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8" />
-<style>
-html, body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: white;
-}
-
-canvas {
-  width: 100vw;
-  height: 100vh;
-  display: block;
-}
-</style>
-</head>
-
-<body>
-<canvas id="gl"></canvas>
-
-<script>
 const canvas = document.getElementById("gl");
 const gl = canvas.getContext("webgl");
 
@@ -54,9 +29,9 @@ uniform float u_seed;
 // ART DIRECTION CONTROLS
 //----------------------------------
 
-const float MASTER_SCALE      = 0.1;
+const float MASTER_SCALE      = 0.2;
 
-const float TIME_SPEED        = 0.0004;
+const float TIME_SPEED        = 0.0008;
 
 const float WARP1_SCALE       = 1.2;
 const float WARP1_STRENGTH    = 4.5;
@@ -237,6 +212,3 @@ function render(time) {
 }
 
 requestAnimationFrame(render);
-</script>
-</body>
-</html>

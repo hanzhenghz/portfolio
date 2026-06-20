@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(202, 198, 188);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+canvas {
+  width: 98vw;
+  height: 98.5vh;
+  display: block;
+  mix-blend-mode: difference;
+}
+
+@font-face {
+  font-family: 'Engravers MT';
+  src: url('../fonts/ENGR.TTF') format('ttf'),
+}
+
+.title {
+    position: fixed;
+    top: 1vh;;
+    left: 3vw;
+    font-size: 13vw;
+    font-family: 'Engravers MT';
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+    line-height: 1px;
+}
+
+.footer-content{
+    position: fixed;
+    font-size: clamp(0.875rem, 0.5rem + 1.2vw, 1.125rem);
+    font-family: 'Engravers MT';
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+    bottom: 1vh;;
+    left: 3vw;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
+}
+
+a:hover {
+    color: rgb(255, 0, 0);
+}
