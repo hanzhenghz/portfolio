@@ -31,7 +31,7 @@ uniform float u_seed;
 
 const float MASTER_SCALE      = 0.2;
 
-const float TIME_SPEED        = 0.0008;
+const float TIME_SPEED        = 0.0009;
 
 const float WARP1_SCALE       = 1.2;
 const float WARP1_STRENGTH    = 4.5;
@@ -50,9 +50,9 @@ const float LINE_SHARPNESS    = 200.0;
 const float GRAIN_SCALE       = 1.0;
 const float GRAIN_STRENGTH    = 0.1;
 
-const float GAMMA             = 8.0;
+const float GAMMA             = 2.2;
 
-const float CONTRAST          = 5.0;
+const float CONTRAST          = 1.0;
 
 const float THRESHOLD_LOW     = 0.35;
 const float THRESHOLD_HIGH    = 0.8;
